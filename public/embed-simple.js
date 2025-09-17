@@ -2,7 +2,7 @@
   // ElevenLabs Learning Suite Embed Script
   
   // Configuration - change this URL as needed
-  var RAILWAY_APP_URL = 'https://elevenlabs-embed-forge-production.up.railway.app';
+  var RAILWAY_APP_URL = 'https://elevenlabs-tbw-production.up.railway.app';
   
   console.log('ElevenLabs Embed: Script started');
   
