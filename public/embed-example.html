@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElevenLabs AI Embed Example</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .embed-container {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 16px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        .code-block {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        h1, h2 {
+            background: linear-gradient(135deg, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ElevenLabs AI Learning Suite Embed</h1>
+        
+        <div class="embed-container">
+            <h2>Option 1: With Agent ID (Secure)</h2>
+            <p>Use this when you want to embed with a pre-configured agent ID:</p>
+            <div class="code-block">
+&lt;script 
+  src="https://your-domain.com/embed-simple.js" 
+  data-agent-id="agent_3801k4sspqk2f5j8feh1x2g7x079"
+  data-height="600px"
+  data-width="100%"
+  async&gt;
+&lt;/script&gt;
+            </div>
+        </div>
+
+        <div class="embed-container">
+            <h2>Option 2: User Input (Flexible)</h2>
+            <p>Use this when you want users to input their own agent ID:</p>
+            <div class="code-block">
+&lt;script 
+  src="https://your-domain.com/embed-simple.js" 
+  data-height="600px"
+  data-width="100%"
+  async&gt;
+&lt;/script&gt;
+            </div>
+        </div>
+
+        <div class="embed-container">
+            <h2>Live Example</h2>
+            <p>Here's how it looks when embedded:</p>
+            
+            <!-- Live embed example -->
+            <script 
+              src="/embed-simple.js" 
+              data-height="500px"
+              data-width="100%"
+              async>
+            </script>
+        </div>
+
+        <div class="embed-container">
+            <h2>Available Parameters</h2>
+            <ul>
+                <li><code>data-agent-id</code> - Your ElevenLabs agent ID (optional)</li>
+                <li><code>data-height</code> - Height of the embed (default: 600px)</li>
+                <li><code>data-width</code> - Width of the embed (default: 100%)</li>
+                <li><code>data-container-id</code> - ID of container element (optional)</li>
+                <li><code>data-base-url</code> - Base URL if hosting elsewhere (optional)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

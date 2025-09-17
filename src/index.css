@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* ElevenLabs Theme - Dark Background */
+    --background: 220 30% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 30% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 30% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary Blues - ElevenLabs Style */
+    --primary: 200 90% 60%;
+    --primary-foreground: 220 30% 5%;
+    --primary-glow: 185 100% 70%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 12%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 200 90% 60%;
+    --accent-foreground: 220 30% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 200 90% 60%;
+
+    /* Beautiful Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 90% 60%), hsl(185 100% 70%));
+    --gradient-radial: radial-gradient(circle, hsl(200 90% 60%) 0%, hsl(220 80% 50%) 30%, hsl(240 60% 40%) 70%, hsl(220 30% 8%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(200 90% 60% / 0.3) 0%, transparent 70%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 85% 70%), hsl(40 90% 60%), hsl(35 95% 55%));
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 40px hsl(200 90% 60% / 0.3);
+    --shadow-intense: 0 0 80px hsl(185 100% 70% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Same as root - we're going dark by default */
+    --background: 220 30% 5%;
+    --foreground: 210 40% 98%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: radial-gradient(circle at 50% 50%, hsl(220 30% 8%) 0%, hsl(220 30% 5%) 100%);
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-radial {
+    background: var(--gradient-radial);
+  }
+  
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+  
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-intense {
+    box-shadow: var(--shadow-intense);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-rotate-gentle {
+    animation: rotate-gentle 8s linear infinite;
+  }
+  
+  .animate-wave {
+    animation: wave 1.2s ease-in-out infinite;
+  }
+  
+  .animate-wave-delay-1 {
+    animation: wave-delay-1 1.2s ease-in-out infinite 0.1s;
+  }
+  
+  .animate-wave-delay-2 {
+    animation: wave-delay-2 1.2s ease-in-out infinite 0.2s;
+  }
+  
+  .bg-gradient-conic {
+    background: conic-gradient(from 0deg at 50% 50%, var(--primary), var(--primary-glow), var(--accent), var(--primary-glow), var(--primary));
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes rotate-gentle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes wave-delay-1 {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(0.8);
+  }
+}
+
+@keyframes wave-delay-2 {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(0.6);
+  }
+}
